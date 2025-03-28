@@ -3,9 +3,14 @@ import random
 import google.generativeai as genai
 from typing import List, Dict, Optional
 import os
+import os
+from dotenv import load_dotenv
 
-# Configure Gemini API (assumes API key is set in environment variables)
-genai.configure(api_key="AIzaSyDdHp8h1aHJPbjQ44aSYY_LUibeIcUjJ24")
+load_dotenv()  
+
+API_KEY = os.getenv("GOOGLE_API_KEY")
+
+genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel("gemini-1.5-flash-latest")
 
 # Data structure for a single MCQ

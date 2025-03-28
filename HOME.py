@@ -2,14 +2,18 @@ import streamlit as st
 from streamlit.components.v1 import html
 import sys
 import os
+from dotenv import load_dotenv
 
-# Add 'my_project' folder to Python's module search path
+load_dotenv()  
+
+API_KEY = os.getenv("GOOGLE_API_KEY")
+
 sys.path.append(os.path.abspath("pages"))
 
-# Set page config
+
 st.set_page_config(page_title="Smart Study Buddy", layout="centered")
 
-# Custom CSS for full-page gradient purple and black background
+
 st.markdown(
     """
     <style>

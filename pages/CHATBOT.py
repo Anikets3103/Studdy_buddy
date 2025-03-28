@@ -1,7 +1,12 @@
 import streamlit as st
 import google.generativeai as genai
+import os
+from dotenv import load_dotenv
 
-API_KEY = "AIzaSyDdHp8h1aHJPbjQ44aSYY_LUibeIcUjJ24"  # Replace with your key
+load_dotenv()  # Load environment variables from .env file
+
+API_KEY = os.getenv("GOOGLE_API_KEY")
+
 genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel("gemini-2.0-pro-exp")  # Using Gemini Pro model
 chat = model.start_chat(history=[])

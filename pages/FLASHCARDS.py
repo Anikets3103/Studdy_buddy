@@ -1,13 +1,12 @@
-import sys
-sys.path.append(".")  # Ensures Python recognizes the folder as a module
-
 import streamlit as st
 import google.generativeai as genai
 import streamlit.components.v1 as components
-# from pdf_summarizer import save_uploaded_pdf,extract_text_from_pdf
+import os
+from dotenv import load_dotenv
 
+load_dotenv()  
 
-API_KEY = "AIzaSyDdHp8h1aHJPbjQ44aSYY_LUibeIcUjJ24"  
+API_KEY = os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel("gemini-2.0-pro-exp") 
 st.markdown(
