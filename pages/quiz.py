@@ -166,7 +166,7 @@ def main():
                     st.rerun()
         else:
             st.success("Quiz completed! Click 'Generate Quiz' to start a new one.")
-            st.subheader(f"Score : {st.session_state//2}/{num_questions}")
+            st.subheader(f"Score : {st.session_state.score//2}/{num_questions}")
 
 if __name__ == "__main__":
     main()
