@@ -133,6 +133,7 @@ def main():
             st.session_state.current_question = 0
             st.session_state.submitted = False
             st.session_state.user_answer = None
+            st.session_state.score = 0
     
     if st.session_state.quiz:
         total_questions = len(st.session_state.quiz)
@@ -155,6 +156,8 @@ def main():
                 st.write(f"Your answer: {st.session_state.user_answer}")
                 st.write(f"Correct answer: {mcq.correct_answer}")
                 st.write("✅ Correct!" if is_correct else "❌ Incorrect!")
+                if is_correct:
+                    st.session_state.score+=1
                 
                 if st.button("Next Question"):
                     st.session_state.current_question += 1
@@ -163,6 +166,7 @@ def main():
                     st.rerun()
         else:
             st.success("Quiz completed! Click 'Generate Quiz' to start a new one.")
+            st.subheader(f"Score : {st.session_state//2}/{num_questions}")
 
 if __name__ == "__main__":
     main()
