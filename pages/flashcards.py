@@ -40,7 +40,7 @@ st.markdown(
 st.title("Revise with Flashcards 📚")
 
 def generate_flashcards(text):
-    prompt = f"Generate exactly 5 flashcards from the following text in Q&A format:\n\n{text}\n\nFormat each flashcard as:\nQ: <Question>\nA: <Answer>"
+    prompt = f"Generate exactly 5 flashcards from the following text in Q&A format.Both answers and questions must be of 1 line:\n\n{text}\n\nFormat each flashcard as:\nQ: <Question>\nA: <Answer>"
     response = model.generate_content(prompt)
     
     # Extract Q&A pairs
