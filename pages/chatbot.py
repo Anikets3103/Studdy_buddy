@@ -8,7 +8,7 @@ load_dotenv()  # Load environment variables from .env file
 API_KEY = st.secrets["GOOGLE_API_KEY"]
 
 genai.configure(api_key=API_KEY)
-model = genai.GenerativeModel("gemini-1.5-pro-latest")  # Using Gemini Pro model
+model = genai.GenerativeModel("gemini-1.5-flash")  # Using Gemini Pro model
 chat = model.start_chat(history=[])
 st.markdown(
     """
