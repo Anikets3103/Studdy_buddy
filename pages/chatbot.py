@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()  # Load environment variables from .env file
 
-API_KEY = os.getenv("GOOGLE_API_KEY")
+API_KEY = st.secrets["GOOGLE_API_KEY"]
 
 genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel("gemini-1.5-pro-latest")  # Using Gemini Pro model
