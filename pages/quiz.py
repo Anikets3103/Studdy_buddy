@@ -9,7 +9,7 @@ load_dotenv()
 API_KEY = os.getenv("GOOGLE_API_KEY")
 
 genai.configure(api_key=API_KEY)
-model = genai.GenerativeModel("gemini-1.5-flash-latest")
+model = genai.GenerativeModel("gemini-2.5-flash")
 
 # MCQ Data Structure
 class MCQ:
